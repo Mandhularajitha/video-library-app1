@@ -1,25 +1,22 @@
 import React from "react";
 import "./Sidebar.css";
-import { VideoCard } from "../VideoCards/VideoCard";
+import { Link } from "react-router-dom";
 
 
 export const Sidebar = () => {
   return (
     <>
-
-
-    
       <div className="mainBody">
   
         <div className="sidebar">
           
           <div className="sidebar__categories">
             <div className="sidebar__category">
-              <i className="material-icons">home</i>
+              <Link to="/Home"><i className="material-icons">home</i></Link>
               <span>Home</span>
             </div>
             <div className="sidebar__category">
-            <i className="material-icons">explore</i>
+            <Link to="/" className=""><i className="material-icons">explore</i></Link>
               <span>Explore</span>
             </div>
 
@@ -28,26 +25,27 @@ export const Sidebar = () => {
           <div className="sidebar__categories">
            
             <div className="sidebar__category">
-              <i className="material-icons">history</i>
+              <Link to="/History"><i className="material-icons">history</i></Link>
               <span>History</span>
             </div>
             <div className="sidebar__category">
-              <i className='fas fa-sliders-h'></i>
+              <Link to="/PlayList"><i className='fas fa-sliders-h'></i></Link>
               <span>PlayList</span>
             </div>
             <div className="sidebar__category">
-              <i className="material-icons">watch_later</i>
+              <Link to="/WatchLater"><i className="material-icons">watch_later</i></Link>
               <span>Watch Later</span>
             </div>
             <div className="sidebar__category">
-              <i className="material-icons">thumb_up</i>
+              
+             <Link to="/Liked"><i className="material-icons">thumb_up</i></Link>
+             
               <span>Liked Videos</span>
             </div>
           </div>
           <hr />
         </div>
-
-        <VideoCard/>       
+   
       </div>
     </>
   );

@@ -1,0 +1,56 @@
+.modal-container {
+    position: relative;
+    background-color: #d9d7d7;
+    border: 1px solid black;
+    border-radius: 0.35rem;
+    border-radius: 8px;
+    width : 15rem;
+    height: max-content;
+    border:1px solid black;
+   
+}
+.modal-main-container{
+    z-index: 9999;
+    position:relative;
+    
+}
+
+.modal-btn:hover{
+    background-color: var(--primary-color);
+    cursor: pointer;
+    color: var(--btn-color);
+}
+
+.modal-input{
+    width: 10rem;
+}
+.modal-btn {
+    border: 1px solid black;
+    color: #262928e0;
+    margin: 2rem;
+    position: absolute;
+    right: 0.34rem;
+    top: 1.9rem;
+    display: inline-block;
+}
+
+.playList-btn{
+    margin: 1rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 3px;
+    padding: 0.2em;
+}
+
+.playList-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--btn-color);
+}
+
+.modal-input-wrapper{
+    display: flex;
+    align-items: center;
+}
+.creatplaylist{
+    padding: 1rem;
+}
