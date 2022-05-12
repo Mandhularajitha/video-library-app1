@@ -1,13 +1,15 @@
 import React from 'react'
 import "./Navbar.css";
-import {Sidebar} from '../Sidebar/Sidebar'
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
     <>
      <div className="header">
         <div className="header__left">
+          
             <i id="menu" className="material-icons">menu</i>
+            
             <img src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_light.svg?cache=72a5d9c"
                 alt="" />
         </div>
@@ -21,13 +23,13 @@ export const Navbar = () => {
         
         <div className="header__icons">
            
-            <i className="material-icons">videocam</i>
-            <i className="material-icons">apps</i>
-            <i className="material-icons">notifications</i>
+           <Link to="/"><i className="material-icons">videocam</i></Link> 
+            
+           <Link to="/login"> <i className="material-icons display-this">login</i> </Link>
             
         </div>
     </div>
-<Sidebar />
+
     </>
   )
 }
