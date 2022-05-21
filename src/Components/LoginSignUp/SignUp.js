@@ -17,7 +17,7 @@ const Signup = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (data.password === data.confirmPassword) {
-      console.log(data);
+      signupHandler(data);
     } else {
       console.log("passwords are not same ");
     }
@@ -39,7 +39,7 @@ const Signup = () => {
               name="name"
               value={data.name}
               onChange={(e) => setData({ ...data, name: e.target.value })}
-              placeholder="Enter UserName"
+              placeholder="Enter name"
             />{" "}
             <br />
             <input
@@ -47,7 +47,7 @@ const Signup = () => {
               name="email"
               value={data.email}
               onChange={(e) => setData({ ...data, email: e.target.value })}
-              placeholder="Email or phone number"
+              placeholder="Email mail"
             />
             <br />
             <input
@@ -69,10 +69,8 @@ const Signup = () => {
             />{" "}
             <br />
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                signupHandler(data.name, data.email, data.password);
-              }}
+              type="submit"
+
               className="sub_button"
             >
               signup

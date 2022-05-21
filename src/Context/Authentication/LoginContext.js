@@ -15,13 +15,15 @@ const AuthProvider = ({ children }) => {
   const [isAuth,setIsAuth] =  useState(authInitialState);
   
   const loginHandler = async (email, password) => {
+    console.log(email,password,"222")
     try {
       const response = await axios.post(`/api/auth/login`, {
-        email,
-        password,
+        "email":email,
+        "password":password,
         
       });
       console.log(response,"cyjhiuikjkfdtykmo")
+      
 
       localStorage.setItem("AuthToken",response.data.encodedToken)
       setIsAuth(true) 
@@ -33,15 +35,11 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const signupHandler = async ({firstName,email,password}) => {
+  const signupHandler = async (data) => {
+    console.log(data)
     try {
-        const response = await axios.post(`/api/auth/signup`, {
-        
-            'firstName': firstName,
-            'email': email,
-            'password': password
-        });
-      console.log(response)
+        const response = await axios.post(`/api/auth/signup`, data);
+      console.log(response.data)
 
     } catch (error) {
        
