@@ -2,20 +2,19 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { usePlayList } from '../../Context/PlayListContext';
-// import { Navigate } from 'react-router-dom';
 const authtoken = localStorage.getItem("AuthToken");
 
-export const PlayList = () => {
+export const Singleplaylist = () => {
 
     const {playListState} = usePlayList();
-    const {playListDispatch,deletePlayList} = usePlayList();
-
-    console.log(playListState,"9090")
-
+    const {playListDispatch,deletePlayList,PlayListVideo,addVideoToPlaylist} = usePlayList();
+    console.log(playListState,"playListState")
+    
+    
     useEffect(() => {
       (async () => {
         try {
-          const response = await axios.get("/api/user/playlists", {
+          const response = await axios.get("/api/user/playlists/:playlistId", {
             headers: {
               authorization:authtoken,
             },
@@ -23,7 +22,7 @@ export const PlayList = () => {
   
           console.log("response", response.data.playlists);
           playListDispatch({
-            type: "ADD_TO_PlayList",
+            type: "ADD_VIDEO_TO_PlayList",
             payload: response.data.playlists,
           });
         } catch (error) {
@@ -38,19 +37,21 @@ export const PlayList = () => {
     <div className="videos__container">
 
     {
-        console.log(playListState,"000")
+        console.log(playListState,"playListState")
         
     }
 
       {playListState.PlayListVideo?.map((video) => {
 
+        console.log(PlayListVideo,"PlayListVideo")
+
     
         const { _id, title, thumbnail, chennelProfile, mechennelNa, view } =
           video;
-          console.log(thumbnail,'tyhb')
+        
         return (
           <>
-            <div className="videos__container" key={_id}>
+            <div className="videos__container" key={_id} onClick={()=>addVideoToPlaylist(video,playListDispatch)}>
               <div className="video">
                 <div className="video__thumbnail">
                   <img src={thumbnail} alt="" />

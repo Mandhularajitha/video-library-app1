@@ -6,9 +6,9 @@
     border-radius: 8px;
     width : 15rem;
     height: max-content;
-    border:1px solid black;
-   
+    border:1px solid black; 
 }
+
 .modal-main-container{
     z-index: 9999;
     position:relative;
@@ -22,8 +22,9 @@
 }
 
 .modal-input{
-    width: 10rem;
+    width:10rem;
 }
+
 .modal-btn {
     border: 1px solid black;
     color: #262928e0;
@@ -51,6 +52,7 @@
     display: flex;
     align-items: center;
 }
+
 .creatplaylist{
     padding: 1rem;
 }

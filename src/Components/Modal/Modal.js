@@ -3,13 +3,13 @@ import { useState } from "react";
 import { usePlayList } from "../../Context/PlayListContext";
 import "./Modal.css";
 
-export const Modal = () => {
-    
-  const { playListState, playListDispatch,addToPlayList,createPlaylist} = usePlayList();
-    
+export const Modal = ({selectedvideo}) => {
+  const { playListState,playListDispatch, addToPlayList, createPlaylist,addVideoToPlaylist } =
+    usePlayList();
+
   const { createUserPlaylist, selectedPlaylist } = playListState;
 
-  const [userList, setUserList] = useState("");
+  const [userList, setUserList] = useState({title:""});
 
   const userInputHandler = (e) => {
     const { name, value } = e.target;
@@ -19,33 +19,29 @@ export const Modal = () => {
   return (
     <div className="modal-main-container">
       <div className="modal-container">
-          <div className="creatplaylist">
+        <div className="creatplaylist">
           <h2>Creat New PlayList</h2>
-          </div>
-    
+        </div>
+
         {createUserPlaylist.map((data) => {
           const isVideo = data.videos.filter(
             (video) => video._id === selectedPlaylist._id
           );
 
           return (
-            <div className="modal-input-wrapper">
-
+            <div className="modal-input-wrapper" key={data._id}>
               <input
                 style={{ width: "5rem" }}
                 className="playlist-checkbox"
+                // checked={checkvideoInplaylist} 
                 onChange={() =>
-                    addToPlayList(selectedPlaylist, data._id,playListDispatch)
+                  addVideoToPlaylist(selectedvideo,data._id, playListDispatch)
                 }
-    
                 type="checkbox"
-                checked={isVideo}
               />
 
               {data.title}
-            {
-                console.log(data.title,"44444")
-            }
+            
             </div>
           );
         })}
@@ -56,6 +52,7 @@ export const Modal = () => {
         >
           X
         </button>
+
         <input
           className="modal-input"
           name="title"

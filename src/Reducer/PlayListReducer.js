@@ -1,7 +1,5 @@
 const PlayListReducerFunc = (state, action) => {
-    console.log(state,"playliststste")
-    console.log(action,"playlistaction")
-
+ 
     switch (action.type) {
       case "ADD_TO_PlayList":
         return { ...state,  PlayListVideo: action.payload };
@@ -10,6 +8,21 @@ const PlayListReducerFunc = (state, action) => {
         return {...state,
           PlayListVideo: action.payload,
           };
+
+          
+      case "ADD_VIDEO_TO_PlayList":
+        return { ...state,  PlayListVideo: action.payload };
+            
+      case "DELETE_VIDEO_FROM_PLAYLIST":
+        return {...state,
+            PlayListVideo: action.payload};
+
+
+
+          
+            
+
+
           
       case "MODAL":
         return { ...state, modal: !state.modal };

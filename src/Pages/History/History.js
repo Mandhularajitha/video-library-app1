@@ -5,7 +5,6 @@ export const History = () => {
 
     const {historyState} = useHistry();
     const {historyDispatch,deleteHistory} = useHistry();
-    console.log(historyState,"111122")
 
   return (
     <>
