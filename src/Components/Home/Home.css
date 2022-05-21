@@ -7,7 +7,7 @@
 .banner{
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://4.imimg.com/data4/YG/RQ/IMOB-53998233/49487351-training-skill-develop-ability-expertise-concept-500x500.jpg');
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp_mdGtXN5jGLlnLNx3kPH6KA_d9Jf3E3CrpVndMBCsmzVDdcpUrO3D2Hj030QXm8TE0M&usqp=CAU');
     background-size: cover;
     background-position: center;
    
@@ -40,7 +40,7 @@
     content:'';
     height: 3px;
     width: 0;
-    background: #009688;
+    background: #b7d1cf;
     position: absolute;
     left:0;
     bottom: -10px;
@@ -85,14 +85,14 @@
     font-weight:bold;
     border: 2px solid #009688;
     background: transparent;
-    color: #fff;
+    color: rgb(49, 35, 35);
     cursor: pointer;
     position: relative;
     overflow: hidden;
 }
 
 .watch_btn{
-    background: #009688;
+    background: #c0e3df;
     height: 100%;
     width:100%;
     border-radius: 25px;

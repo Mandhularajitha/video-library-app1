@@ -1,6 +1,4 @@
 const WatchLaterReducerFunc = (state, action) => {
-    console.log(state,"watchlaterstate")
-    console.log(action,"watchlateraction")
 
     switch (action.type) {
       case "ADD_TO_WATCHLATER":

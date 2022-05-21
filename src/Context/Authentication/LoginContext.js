@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
             'email': email,
             'password': password
         });
-      console.log(response,"raji")
+      console.log(response)
 
     } catch (error) {
        

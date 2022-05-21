@@ -1,7 +1,5 @@
 const likeReducerFunc = (state, action) => {
-    console.log(state,"likestate")
-    console.log(action,"likeaction")
-
+  
     switch (action.type) {
       
       case "ADD_TO_LIKE":

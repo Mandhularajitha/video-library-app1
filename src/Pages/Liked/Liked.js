@@ -7,7 +7,6 @@ export const Liked = () => {
   const {likedState} = useLiked();
   const {likedDispatch,deleteLikedVideo } = useLiked();
 
-  console.log(likedState,"rhjh")
   return (
 
     <>
