@@ -28,7 +28,7 @@ const HistoryProvider = ({ children }) => {
           },
         }
       );
-      console.log(data,"rajitha")
+      console.log(data,"rajithasgashikala")
       
       historyDispatch({ type: "ADD_TO_HISTORY", payload: data.history });
   
