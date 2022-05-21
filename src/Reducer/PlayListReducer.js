@@ -20,9 +20,6 @@ const PlayListReducerFunc = (state, action) => {
 
 
           
-            
-
-
           
       case "MODAL":
         return { ...state, modal: !state.modal };
