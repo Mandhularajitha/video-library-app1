@@ -25,7 +25,7 @@ const Login = () => {
               <input
                 className="user"
                 type="text"
-                name="username"
+                name="email"
                 value={data.email}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
                 placeholder="username"
