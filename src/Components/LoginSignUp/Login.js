@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/Authentication/LoginContext";
 
-// import "./Login.css"
+import "./Login.css"
 
 const Login = () => {
   const [data, setData] = useState({
@@ -22,8 +22,8 @@ const Login = () => {
               </Link>
             </div>
             <form>
-              <input
-                className="user"
+              <input 
+                className="inputbuttons"
                 type="text"
                 name="email"
                 value={data.email}
@@ -32,7 +32,7 @@ const Login = () => {
               />
               <br />
               <input
-                className="user"
+                className="inputbuttons"
                 type="password"
                 name="password"
                 value={data.password}
@@ -41,7 +41,7 @@ const Login = () => {
               />
               <br />
 
-              <button
+              <button className="login_button"
                 onClick={(e) => {
                   e.preventDefault();
                   loginHandler(data.email, data.password);
@@ -51,11 +51,12 @@ const Login = () => {
                 Login
               </button>
             </form>
-
-            <p>
+            <div><br />  
+            <button className="passwordbutn">
               <a href="a">Forget password ?</a>or
               <Link to="/Signup">Signup</Link>
-            </p>
+            </button>
+            </div> 
           </center>
         </div>
       </div>

@@ -1,0 +1,48 @@
+.inputbuttons{
+    width: 17rem;
+    height:2.3rem;
+    
+}
+
+.sub_button{
+    margin-top: 1rem;
+    width: 17rem;
+    padding: 10px;
+    font-size: 20px;
+}
+.login_button{
+    margin-top: 1rem;
+    width: 17rem;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.passwordbutn{
+    width: 17rem;
+    height:2rem;
+    font-size: 16px;
+}
+
+.seconddiv{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 23px;
+    width: 23rem;
+   margin-left: 38rem;
+   margin-top: 10rem;
+}
+
+.loginbutton{
+    margin-top: 0.2rem;
+    width: 17rem;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.signupcontainer{
+    background-color: #f2f2f2;
+    padding: 19px;
+    width: 30rem;
+    margin-left: 36rem;
+    margin-top: 8rem;
+}

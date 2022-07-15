@@ -5,15 +5,17 @@
     height: calc(100vh - 70px);
     display: flex;
     overflow: hidden;
-    
+    position: fixed;
   }
   
   .sidebar {
+    margin-top:4.4rem;
     height: 100%;
     width: 230px;
     background-color: white;
     overflow-y: scroll;
     background: #d3d3d3;
+    position: fixed;
   }
   
   .sidebar__categories {
@@ -29,6 +31,7 @@
     display: flex;
     align-items: center;
     padding: 12px 25px;
+    
   }
   
   .sidebar__category span {
@@ -49,8 +52,9 @@
     background-color: #e5e5e5;
     border: none;
   }
+  
 .sidebaricons{
   color: rgb(68, 63, 63);
   font-family: 'Garamond';
-  
+  font-size: 20px;
 }

@@ -12,11 +12,11 @@ export const Sidebar = () => {
           
           <div className="sidebar__categories">
             <div className="sidebar__category">
-              <Link to="/Home"><i className="material-icons">home</i><p className="sidebaricons">Home</p></Link>
+              <Link to="/Home"><i className="material-icons">home</i><span className="sidebaricons">Home</span></Link>
               
             </div>
             <div className="sidebar__category">
-            <Link to="/" className=""><i className="material-icons">explore</i><p className="sidebaricons">Explore</p></Link>
+            <Link to="/" className=""><i className="material-icons">explore</i><span className="sidebaricons">Explore</span></Link>
              
             </div>
 
@@ -25,20 +25,20 @@ export const Sidebar = () => {
           <div className="sidebar__categories">
            
             <div className="sidebar__category">
-              <Link to="/History"><i className="material-icons">history</i><p className="sidebaricons">History</p></Link>
+              <Link to="/History"><i className="material-icons">history</i><span className="sidebaricons">History</span></Link>
          
             </div>
             <div className="sidebar__category">
-              <Link to="/CreatPlaylist"><i className='fas fa-sliders-h'></i><p className="sidebaricons">PlayList</p></Link>
+              <Link to="/CreatPlaylist"><i className='fas fa-sliders-h'></i><span className="sidebaricons">PlayList</span></Link>
           
             </div>
             <div className="sidebar__category">
-              <Link to="/WatchLater"><i className="material-icons">watch_later</i><p className="sidebaricons">WatchLater</p></Link>
+              <Link to="/WatchLater"><i className="material-icons">watch_later</i><span className="sidebaricons">WatchLater</span></Link>
             
             </div>
             <div className="sidebar__category">
               
-             <Link to="/Liked"><i className="material-icons">thumb_up</i><p className="sidebaricons">Liked Videos</p></Link>
+             <Link to="/Liked"><i className="material-icons">thumb_up</i><span className="sidebaricons">Liked Videos</span></Link>
             
             </div>
           </div>
