@@ -10,7 +10,7 @@ export const NavContainer = () => {
       <Navbar />
       <div className="Sidebar">
         <Sidebar />
-        <div className="Outlet">
+        <div className="Outlets">
           <Outlet />
         </div>
       </div>

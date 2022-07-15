@@ -7,13 +7,13 @@
 .banner{
     width: 100%;
     height: 100vh;
-    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp_mdGtXN5jGLlnLNx3kPH6KA_d9Jf3E3CrpVndMBCsmzVDdcpUrO3D2Hj030QXm8TE0M&usqp=CAU');
+    background-image:url('https://image.shutterstock.com/image-photo/female-hands-holding-digital-tablet-260nw-1910115856.jpg');
     background-size: cover;
     background-position: center;
    
 }
 .navbar{
-    width: 85%;
+    width: 80%;
     margin: auto;
     padding: 35px 0;
     display: flex;
@@ -56,12 +56,12 @@
     top: 50%;
     transform:translate(45%);
     text-align: center;
-    color: #fff;
+    color: rgb(62, 82, 173);
     top: 15rem;
 }
 
 .title_container{
-    color: rgb(226, 243, 243);
+    color: #40a0d8;
     font-family: serif;
 }
 
@@ -85,14 +85,14 @@
     font-weight:bold;
     border: 2px solid #009688;
     background: transparent;
-    color: rgb(49, 35, 35);
+    color: rgb(35, 38, 49);
     cursor: pointer;
     position: relative;
     overflow: hidden;
 }
 
 .watch_btn{
-    background: #c0e3df;
+    background: #40a0d8;
     height: 100%;
     width:100%;
     border-radius: 25px;

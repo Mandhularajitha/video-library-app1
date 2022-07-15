@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { useContext} from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const AuthContext = createContext();
@@ -13,6 +14,12 @@ const authInitialState = localStorage.getItem("AuthToken") ? true : false;
 const AuthProvider = ({ children }) => {
 
   const [isAuth,setIsAuth] =  useState(authInitialState);
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   
   const loginHandler = async (email, password) => {
     console.log(email,password,"222")
@@ -26,7 +33,8 @@ const AuthProvider = ({ children }) => {
       
 
       localStorage.setItem("AuthToken",response.data.encodedToken)
-      setIsAuth(true) 
+      setIsAuth(true)
+      navigate(from, { replace: true }); 
 
     
     } catch (error) {

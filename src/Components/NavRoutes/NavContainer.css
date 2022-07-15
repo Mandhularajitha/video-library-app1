@@ -9,7 +9,7 @@
     min-height: 100vh;
   }
   
-  .Outlet{
+  .Outlets{
     max-width: calc(100% - 10rem);
     min-width: calc(100% - 10rem);
     height: 100%;

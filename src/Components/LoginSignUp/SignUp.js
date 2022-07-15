@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../Navigation/Navbar";
-// import "./Login.css"
+import "./Login.css"
 import { useAuth } from "../../Context/Authentication/LoginContext";
 
 const Signup = () => {
@@ -27,14 +27,14 @@ const Signup = () => {
     <>
       <div className="signup">
         {console.log(data)}
-        <center>
-          <div className="signup page">
+        <center className="signupcontainer">
+          <div className="signup_page">
             <Link to="/login">
               <h2>signup</h2>
             </Link>
           </div>
           <form onSubmit={submitHandler}>
-            <input
+            <input className="inputbuttons"
               type="text"
               name="name"
               value={data.name}
@@ -42,7 +42,7 @@ const Signup = () => {
               placeholder="Enter name"
             />{" "}
             <br />
-            <input
+            <input className="inputbuttons"
               type="email"
               name="email"
               value={data.email}
@@ -50,7 +50,7 @@ const Signup = () => {
               placeholder="Email mail"
             />
             <br />
-            <input
+            <input className="inputbuttons"
               type="password"
               name="password"
               value={data.password}
@@ -58,7 +58,7 @@ const Signup = () => {
               placeholder="password"
             />
             <br />
-            <input
+            <input className="inputbuttons"
               type="password"
               name="confirmPassword"
               value={data.confirmPassword}
@@ -75,9 +75,11 @@ const Signup = () => {
             >
               signup
             </button>
-            <p>
+            <div>
+            <button className="loginbutton">
               <Link to="/login">login</Link>
-            </p>
+            </button>
+            </div>
           </form>
         </center>
       </div>
