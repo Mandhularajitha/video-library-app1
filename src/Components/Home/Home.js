@@ -11,9 +11,7 @@ export const Home = () => {
 
           <div className="content">
             <h1 className="title_container">Watch Programming vedios</h1>
-            <p>
-              Watch more different Programming Vedios and improve Your Skills
-            </p>
+    
             <div>
               <Link to="/">
                 <button className="home_btn" type="button">

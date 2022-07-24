@@ -6,6 +6,7 @@
     display: flex;
     overflow: hidden;
     position: fixed;
+    text-decoration: none;
   }
   
   .sidebar {
@@ -27,6 +28,14 @@
     text-decoration: none;
   }
   
+  .icon-sidebar {
+    color:rgb(68, 63, 63);
+  }
+
+  .fa-home{
+    color:rgb(68, 63, 63);
+  }
+
   .sidebar__category {
     display: flex;
     align-items: center;

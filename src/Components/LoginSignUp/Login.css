@@ -30,6 +30,7 @@
     width: 23rem;
    margin-left: 38rem;
    margin-top: 10rem;
+   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .loginbutton{
@@ -45,4 +46,5 @@
     width: 30rem;
     margin-left: 36rem;
     margin-top: 8rem;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

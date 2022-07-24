@@ -20,7 +20,7 @@
     align-items: center;
     cursor:pointer ;
     position: relative;
-    right: -60%;
+    right: -70%;
     bottom:24%;
     display: flex;
     gap:0.3rem
@@ -72,7 +72,7 @@
   
   .video__details {
     display: flex;
-    margin-top: 10px;
+    margin-top: 18px;
   }
   
   .title {

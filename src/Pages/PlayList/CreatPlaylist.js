@@ -7,8 +7,7 @@ const authtoken = localStorage.getItem("AuthToken");
 
 export const CreatPlaylist = () => {
   const { playListState } = usePlayList();
-  const { playListDispatch, deletePlayList, addVideoToPlaylist } =
-    usePlayList();
+  const { playListDispatch, deletePlayList, addVideoToPlaylist,} = usePlayList();
 
   console.log(playListState, "9090");
 
@@ -23,7 +22,7 @@ export const CreatPlaylist = () => {
 
         console.log("response", response.data.playlists);
         playListDispatch({
-          type: "ADD_TO_PlayList",
+          type: "GET_PlayList",
           payload: response.data.playlists,
         });
       } catch (error) {
@@ -36,14 +35,15 @@ export const CreatPlaylist = () => {
     <>
       <div className="videos">
         <div className="playcontainer__container">
-          {console.log(playListState, "000")}
 
-          {playListState.PlayListVideo?.map((video) => {
+          {playListState.getUserPlayList?.map((video) => {
             const { _id, title } = video;
+
 
             return (
               <>
                 <div className="playlistmain__container" key={_id}>
+                <h3>{title}</h3>
                   <div className="videos_1">
                     <div className="icons_container">
                       <div className="border_radios_deletes">
@@ -56,16 +56,7 @@ export const CreatPlaylist = () => {
                       </div>
                     </div>
 
-                    <div className="video__details">
-                      <div
-                        className="title"
-                        onClick={() =>
-                          addVideoToPlaylist(video, playListDispatch)
-                        }
-                      >
-                        <h3>{title}</h3>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               </>

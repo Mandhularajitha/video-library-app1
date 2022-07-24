@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../Navigation/Navbar";
-import "./Login.css"
+import "./Login.css";
 import { useAuth } from "../../Context/Authentication/LoginContext";
 
 const Signup = () => {
@@ -34,7 +34,8 @@ const Signup = () => {
             </Link>
           </div>
           <form onSubmit={submitHandler}>
-            <input className="inputbuttons"
+            <input
+              className="inputbuttons"
               type="text"
               name="name"
               value={data.name}
@@ -42,7 +43,8 @@ const Signup = () => {
               placeholder="Enter name"
             />{" "}
             <br />
-            <input className="inputbuttons"
+            <input
+              className="inputbuttons"
               type="email"
               name="email"
               value={data.email}
@@ -50,7 +52,8 @@ const Signup = () => {
               placeholder="Email mail"
             />
             <br />
-            <input className="inputbuttons"
+            <input
+              className="inputbuttons"
               type="password"
               name="password"
               value={data.password}
@@ -58,7 +61,8 @@ const Signup = () => {
               placeholder="password"
             />
             <br />
-            <input className="inputbuttons"
+            <input
+              className="inputbuttons"
               type="password"
               name="confirmPassword"
               value={data.confirmPassword}
@@ -70,15 +74,14 @@ const Signup = () => {
             <br />
             <button
               type="submit"
-
               className="sub_button"
             >
               signup
             </button>
             <div>
-            <button className="loginbutton">
-              <Link to="/login">login</Link>
-            </button>
+              <button className="loginbutton">
+                <Link to="/login">login</Link>
+              </button>
             </div>
           </form>
         </center>

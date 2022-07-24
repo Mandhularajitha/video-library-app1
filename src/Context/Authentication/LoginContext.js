@@ -22,16 +22,16 @@ const AuthProvider = ({ children }) => {
   const from = location.state?.from?.pathname || "/";
   
   const loginHandler = async (email, password) => {
-    console.log(email,password,"222")
+  
     try {
       const response = await axios.post(`/api/auth/login`, {
         "email":email,
         "password":password,
         
       });
-      console.log(response,"cyjhiuikjkfdtykmo")
+     
       
-
+      localStorage.setItem("user",JSON.stringify(response.data.foundUser))
       localStorage.setItem("AuthToken",response.data.encodedToken)
       setIsAuth(true)
       navigate(from, { replace: true }); 
@@ -44,12 +44,16 @@ const AuthProvider = ({ children }) => {
   };
 
   const signupHandler = async (data) => {
-    console.log(data)
     try {
         const response = await axios.post(`/api/auth/signup`, data);
-      console.log(response.data)
 
-    } catch (error) {
+        localStorage.setItem("user",JSON.stringify(response.data.createdUser))
+        localStorage.setItem("AuthToken",response.data.encodedToken)
+        setIsAuth(true)
+        navigate(from,{replace:true   })
+
+    } 
+    catch (error) {
        
     }
 };

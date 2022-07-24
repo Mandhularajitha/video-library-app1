@@ -52,7 +52,7 @@ export const videos = [
     creator: "Soham Shah",
     videoLength:"7:50",
     thumbnail:"https://i.ytimg.com/vi/2Xa3Y4xz8_s/maxresdefault.jpg",
-    chennelProfile:"https://png.pngitem.com/pimgs/s/174-1746846_java-logo-hd-png-download.png" ,
+    chennelProfile:"https://www.pngitem.com/pimgs/m/174-1746846_java-logo-hd-png-download.png" ,
     chennelName:"Web Dev Simplified",
     VideoId: "2Xa3Y4xz8_s",
     view:"245 views 10 month ago"

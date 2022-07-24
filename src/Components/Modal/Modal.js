@@ -33,7 +33,6 @@ export const Modal = ({selectedvideo}) => {
               <input
                 style={{ width: "5rem" }}
                 className="playlist-checkbox"
-                // checked={checkvideoInplaylist} 
                 onChange={() =>
                   addVideoToPlaylist(selectedvideo,data._id, playListDispatch)
                 }
@@ -67,7 +66,7 @@ export const Modal = ({selectedvideo}) => {
             createPlaylist(userList,playListDispatch, setUserList)
           }
         >
-          <h4>Create Playlist</h4>
+          <button>Create Playlist</button>
         </button>
       </div>
     </div>

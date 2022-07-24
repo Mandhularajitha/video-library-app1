@@ -25,7 +25,7 @@ export const VideoCard = () => {
             onClick={() => setModalVisible((state) => !state)}
           ></div>
           <div className="main-modal">
-            <Modal selectedvideo={selectedvideo}/>
+            <Modal selectedvideo={selectedvideo} />
           </div>
         </div>
       )}
@@ -52,7 +52,7 @@ export const VideoCard = () => {
                         className="border_radios_2"
                         onClick={() => addToLike(video, likedDispatch)}
                       >
-                        <i className="material-icons">thumb_up</i>
+                        <i className="icon-sidebar fa-solid fa-thumbs-up "></i>
                       </div>
 
                       <div
@@ -61,7 +61,7 @@ export const VideoCard = () => {
                           addToWatchlater(video, watchLaterDispatch)
                         }
                       >
-                        <i className="material-icons">watch_later</i>
+                        <i className="icon-sidebar fa-solid fa-clock"></i>
                       </div>
 
                       <div
@@ -71,7 +71,7 @@ export const VideoCard = () => {
                           setSelectedVideo(video);
                         }}
                       >
-                        <i className="fas fa-sliders-h"></i>
+                        <i className="icon-sidebar fa-solid fa-folder-plus"></i>
                       </div>
                     </div>
                   </div>

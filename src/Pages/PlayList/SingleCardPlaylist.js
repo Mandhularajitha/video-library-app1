@@ -1,26 +1,32 @@
 import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { usePlayList } from '../../Context/PlayListContext';
-const authtoken = localStorage.getItem("AuthToken");
 
-export const Singleplaylist = () => {
+// const authtoken = localStorage.getItem("AuthToken");
+
+export const SingleCardPlaylist = () => {
+  const authtoken = localStorage.getItem("AuthToken");
 
     const {playListState} = usePlayList();
-    const {playListDispatch,deletePlayList,PlayListVideo,addVideoToPlaylist} = usePlayList();
-    console.log(playListState,"playListState")
+    const {playListDispatch,deletePlayList,addVideoToPlaylist} = usePlayList();
+    const {playlistId}=useParams();
+
+    console.log(playListState,"playListState");
+    console.log( authtoken,"authtoken")
     
     
     useEffect(() => {
       (async () => {
         try {
-          const response = await axios.get("/api/user/playlists/:playlistId", {
+          const response = await axios.get(`/api/user/playlists/${playlistId}`, {
             headers: {
               authorization:authtoken,
             },
           });
   
-          console.log("response", response.data.playlists);
+          console.log("response", response.data.playlists,"22222222222");
           playListDispatch({
             type: "ADD_VIDEO_TO_PlayList",
             payload: response.data.playlists,
@@ -31,6 +37,7 @@ export const Singleplaylist = () => {
       })();
     }, []);
 
+``
   return (
     <>
     <div className="videos">
@@ -41,9 +48,9 @@ export const Singleplaylist = () => {
         
     }
 
-      {playListState.PlayListVideo?.map((video) => {
+      {playListState?.map((video) => {
 
-        console.log(PlayListVideo,"PlayListVideo")
+        console.log(authtoken,"authtoken")
 
     
         const { _id, title, thumbnail, chennelProfile, mechennelNa, view } =
