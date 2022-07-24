@@ -31,7 +31,6 @@ const addToWatchlater = async (video,watchLaterDispatch) => {
       
     );
    
-    console.log(data,"rajitha")
     
     watchLaterDispatch({ type: "ADD_TO_WATCHLATER", payload: data.watchlater });
 

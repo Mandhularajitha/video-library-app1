@@ -56,12 +56,14 @@
     top: 50%;
     transform:translate(45%);
     text-align: center;
-    color: rgb(62, 82, 173);
+    color: rgb(20, 20, 20);
     top: 15rem;
+    margin-top: 7rem;
+    margin-left: -1.5rem;
 }
 
 .title_container{
-    color: #40a0d8;
+    color: #101111;
     font-family: serif;
 }
 
@@ -85,14 +87,14 @@
     font-weight:bold;
     border: 2px solid #009688;
     background: transparent;
-    color: rgb(35, 38, 49);
+    color: rgb(93, 115, 196);
     cursor: pointer;
     position: relative;
     overflow: hidden;
 }
 
 .watch_btn{
-    background: #40a0d8;
+    background: #5b5c5e;
     height: 100%;
     width:100%;
     border-radius: 25px;

@@ -17,7 +17,7 @@ const LikeProvider = ({ children }) => {
 
 const addToLike = async (video, likedDispatch) => {
 
-  console.log(authtoken,"ooo")
+
   
     console.log(video,"shilu")
   try {
@@ -32,7 +32,7 @@ const addToLike = async (video, likedDispatch) => {
         },
       }
     );
-    console.log(data,"rajitha")
+  
     
     likedDispatch({ type: "ADD_TO_LIKE", payload: data.likes });
 

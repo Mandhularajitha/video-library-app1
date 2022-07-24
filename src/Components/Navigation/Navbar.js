@@ -8,7 +8,7 @@ export const Navbar = () => {
      <div className="header">
         <div className="header__left">
           
-            <i id="menu" className="material-icons">menu</i>
+            <h3 className='titleof'>EpicPlayz</h3>
             
             <img src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_light.svg?cache=72a5d9c"
                 alt="" />

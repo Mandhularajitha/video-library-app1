@@ -10,8 +10,6 @@ const HistoryProvider = ({ children }) => {
 
   const authtoken = localStorage.getItem("AuthToken");
 
-  console.log(authtoken,"www")
-
   const [historyState, historyDispatch] = useReducer(historyReducerFunc, {
     historyVideo: [],
   });
@@ -30,7 +28,6 @@ const HistoryProvider = ({ children }) => {
           },
         }
       );
-      console.log(data,"132")
       
       historyDispatch({ type: "ADD_TO_HISTORY", payload: data.history });
   

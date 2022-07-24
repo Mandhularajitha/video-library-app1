@@ -6,7 +6,9 @@
     border-radius: 8px;
     width : 15rem;
     height: max-content;
-    border:1px solid black; 
+    border:1px solid black;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .modal-main-container{
@@ -23,6 +25,7 @@
 
 .modal-input{
     width:10rem;
+    margin-left: 1rem;
 }
 
 .modal-btn {

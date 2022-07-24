@@ -13,13 +13,13 @@ const PlayListProvider = ({ children }) => {
     createUserPlaylist: [],
     selectedPlaylist: {},
     videoData: [],
-    PlayListVideo: [],
+    getUserPlayList: [],
   });
 
-  const addToPlayList = async (video, playListDispatch) => {
+  const addToPlayList = async (video,_id, playListDispatch) => {
     try {
       const { data } = await axios.post(
-        "/api/user/playlists",
+        "/api/user/playlists/${_id}",
         {
           video,
         },
@@ -51,7 +51,6 @@ const PlayListProvider = ({ children }) => {
           authorization: authtoken,
         },
       });
-      console.log("from func", data);
 
       playListDispatch({
         type: "DELETE_FROM_PLAYLIST",
@@ -77,7 +76,7 @@ const PlayListProvider = ({ children }) => {
           },
         }
       );
-      console.log(data, "rajitha");
+     
 
       playListDispatch({ type: "ADD_VIDEO_TO_PlayList", 
       payload: data.playlists });
@@ -85,6 +84,7 @@ const PlayListProvider = ({ children }) => {
       console.log("Something went wrong", error);
     }
   };
+
 
   const deleteVideoPlayList = async (_id,playlistId,playListDispatch) => {
     try {
@@ -128,7 +128,6 @@ const PlayListProvider = ({ children }) => {
         }
       );
 
-      console.log(response);
       playListDispatch({
         type: "CREATE_PLAYLIST",
         payload: response.data.playlists,
@@ -140,6 +139,28 @@ const PlayListProvider = ({ children }) => {
     }
   };
 
+
+
+
+ const deleteVideo = async (playlistId, videoId, playListDispatch) => {
+  try {
+    const { data } = await axios.delete(
+      `/api/user/playlists/${playlistId}/${videoId}`,
+      {
+        headers: {
+          authorization: authtoken,
+        },
+      }
+    );
+
+    playListDispatch({
+      type: "DELETE_VIDEO_FROM_PLAYLIST",
+      payload: data.playlist,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
   const addDataToList = (video, playListDispatch) => {
     playListDispatch({ type: "SELECTED_ID", payload: video });
     playListDispatch({ type: "MODAL", payload: true });
@@ -147,7 +168,7 @@ const PlayListProvider = ({ children }) => {
   };
 
   return (
-    <PlayListContext.Provider value={{playListState,playListDispatch,addToPlayList,deletePlayList,createPlaylist,addDataToList,addVideoToPlaylist,deleteVideoPlayList}}>
+    <PlayListContext.Provider value={{playListState,playListDispatch,addToPlayList,deletePlayList,createPlaylist,addDataToList,addVideoToPlaylist,deleteVideoPlayList,deleteVideo}}>
       {children}
     </PlayListContext.Provider>
   );
