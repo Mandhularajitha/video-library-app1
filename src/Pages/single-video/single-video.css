@@ -1,0 +1,92 @@
+.video-page-body{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+.single-video-body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+
+.video-frame{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 70%;
+    height: 80vh;
+}
+
+.video-player{
+    position: relative;
+    height: 100vh;
+}
+
+.feature-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 20vh;
+    position: absolute;
+    bottom: 15%;
+    left: 1%;
+}
+
+.watch-later,
+.playlist,
+.like{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.727);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.watch-later-btn,
+.playlist-btn,
+.like-btn{
+    font-size: 18px;
+}
+
+.feature-texts{
+    font-size: 13px;
+}
+
+
+.video-discription{
+    text-align: start;
+}
+
+.creator{
+    display: inline;
+}
+
+
+.card-Body{
+    display: flex;
+    justify-content: center;
+    margin: 00.5rem;
+    border: 2px solid var(--border-color);
+}
+
+.sidevideo-image{
+    width: 13rem;
+    height: 8rem;
+}
+
+.video-texts{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 15rem;
+    height: 8rem;
+}

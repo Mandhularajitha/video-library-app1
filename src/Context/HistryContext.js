@@ -28,7 +28,6 @@ const HistoryProvider = ({ children }) => {
           },
         }
       );
-      
       historyDispatch({ type: "ADD_TO_HISTORY", payload: data.history });
   
     } catch (error) {

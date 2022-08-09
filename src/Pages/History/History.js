@@ -3,8 +3,8 @@ import { useHistry } from '../../Context/HistryContext';
 
 export const History = () => {
 
-    const {historyState} = useHistry();
-    const {historyDispatch,deleteHistory} = useHistry();
+    const {historyState, historyDispatch,deleteHistory} = useHistry();
+    console.log(historyState.historyVideo,"kkkkhhhhhh");
 
   return (
     <>
@@ -24,8 +24,8 @@ export const History = () => {
                      
                     </div>
 
-                    <div className="icons_1">
-                        <div className="border_radios_delete">
+                    <div className="icons_2">
+                        <div className="delete-btn">
                           <div className="border_radios_2" onClick={()=>deleteHistory(_id,historyDispatch)}>
                             <i className="material-icons">delete</i>
                           </div>

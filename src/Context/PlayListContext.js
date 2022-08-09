@@ -15,6 +15,24 @@ const PlayListProvider = ({ children }) => {
     videoData: [],
     getUserPlayList: [],
   });
+  
+  const getPlaylist = async (dispatch) => {
+      try {
+        const response = await axios.get("/api/user/playlists", {
+          headers: {
+            authorization: authtoken,
+          },
+        });
+
+        console.log("response", response.data.playlists);
+        dispatch({
+          type: "GET_PlayList",
+          payload: response.data.playlists,
+        });
+      } catch (error) {
+        console.log(error);
+      };
+    };
 
   const addToPlayList = async (video,_id, playListDispatch) => {
     try {
@@ -64,6 +82,7 @@ const PlayListProvider = ({ children }) => {
 
 
   const addVideoToPlaylist = async (video,playlistId, playListDispatch) => {
+    console.log(video,playlistId,"00");
     try {
       const { data } = await axios.post(
         `/api/user/playlists/${playlistId}`,
@@ -75,9 +94,9 @@ const PlayListProvider = ({ children }) => {
             authorization: authtoken,
           },
         }
-      );
-     
-
+        );
+        
+      console.log(data,"ddd");
       playListDispatch({ type: "ADD_VIDEO_TO_PlayList", 
       payload: data.playlists });
     } catch (error) {
@@ -97,7 +116,6 @@ const PlayListProvider = ({ children }) => {
           authorization: authtoken,
         },
       });
-      console.log("from func", data);
 
       playListDispatch({
         type: "DELETE_VIDEO_FROM_PLAYLIST",
@@ -111,7 +129,7 @@ const PlayListProvider = ({ children }) => {
 
 
 
-  const createPlaylist = async (userList, playListDispatch, setUserList) => {
+  const createPlaylist = async (userList, playListDispatch) => {
     console.log(userList, "user list");
     try {
       const response = await axios.post(
@@ -133,7 +151,6 @@ const PlayListProvider = ({ children }) => {
         payload: response.data.playlists,
       });
 
-      setUserList({ ...userList, title: "" });
     } catch (error) {
       console.log(error);
     }
@@ -152,11 +169,7 @@ const PlayListProvider = ({ children }) => {
         },
       }
     );
-
-    playListDispatch({
-      type: "DELETE_VIDEO_FROM_PLAYLIST",
-      payload: data.playlist,
-    });
+   getPlaylist(playListDispatch)
   } catch (error) {
     console.error(error);
   }

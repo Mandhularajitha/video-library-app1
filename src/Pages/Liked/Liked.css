@@ -25,16 +25,19 @@
     display: flex;
     gap:0.3rem
   }
-  
-  .border_radios_delete{
-    margin-top:-43px;
-    align-items: center;
-    cursor:pointer ;
+
+  .icons_2{
     position: relative;
-    right: -85%;
-    bottom:24%;
-    display: flex;
-    gap:0.3rem
+    position: absolute;
+    right: 5%;
+    top: 45%;
+  }
+  
+  .delete-btn{
+    position: absolute;
+    right: 5%;
+    top: 4%;
+    cursor:pointer ;
   }
 
   .border_radios_2{
@@ -46,6 +49,7 @@
   
   
   .video {
+    position: relative;
     width: 310px;
     margin-right: 10px;
     margin-bottom: 30px;

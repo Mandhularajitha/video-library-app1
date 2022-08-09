@@ -1,4 +1,5 @@
 const PlayListReducerFunc = (state, action) => {
+  console.log(action,"bbbbdddd");
   switch (action.type) {
     case "GET_PlayList":
       return { ...state,  getUserPlayList: action.payload };
@@ -9,7 +10,7 @@ const PlayListReducerFunc = (state, action) => {
           getUserPlayList:[...action.payload],
         };
 
-        
+        // getUserPlayList   
     case "ADD_VIDEO_TO_PlayList":
       return { ...state,  getUserPlayList: action.payload };
 

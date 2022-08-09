@@ -3,7 +3,7 @@ import { useState } from "react";
 import { usePlayList } from "../../Context/PlayListContext";
 import "./Modal.css";
 
-export const Modal = ({selectedvideo}) => {
+export const Modal = ({data:{singleVideoData,setModalVisible}}) => {
   const { playListState,playListDispatch, addToPlayList, createPlaylist,addVideoToPlaylist } =
     usePlayList();
 
@@ -12,10 +12,9 @@ export const Modal = ({selectedvideo}) => {
   const [userList, setUserList] = useState({title:""});
 
   const userInputHandler = (e) => {
-    const { name, value } = e.target;
-    setUserList({ ...userList, [name]: value });
+    setUserList({title:e.target.value});
   };
-
+  console.log(createUserPlaylist,"playlist");
   return (
     <div className="modal-main-container">
       <div className="modal-container">
@@ -33,9 +32,10 @@ export const Modal = ({selectedvideo}) => {
               <input
                 style={{ width: "5rem" }}
                 className="playlist-checkbox"
-                onChange={() =>
-                  addVideoToPlaylist(selectedvideo,data._id, playListDispatch)
-                }
+                onChange={() => {
+                  setModalVisible(false)
+                  addVideoToPlaylist(singleVideoData,data._id, playListDispatch)
+                }}
                 type="checkbox"
               />
 
@@ -47,7 +47,9 @@ export const Modal = ({selectedvideo}) => {
 
         <button
           className="btn modal-btn"
-          onClick={() => playListDispatch({ type: "MODAL_CLOSE" })}
+          onClick={() => {
+            setModalVisible(false)
+            playListDispatch({ type: "MODAL_CLOSE" })}}
         >
           X
         </button>
@@ -57,13 +59,13 @@ export const Modal = ({selectedvideo}) => {
           name="title"
           value={userList.title}
           type="text"
-          onChange={userInputHandler}
+          onChange={e => userInputHandler(e)}
         />
 
         <button
           className="playList-btn"
           onClick={() =>
-            createPlaylist(userList,playListDispatch, setUserList)
+            createPlaylist(userList,playListDispatch)
           }
         >
           <button>Create Playlist</button>

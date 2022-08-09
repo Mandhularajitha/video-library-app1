@@ -2,21 +2,18 @@
 
 
 .mainBody {
-    height: calc(100vh - 70px);
-    display: flex;
-    overflow: hidden;
-    position: fixed;
     text-decoration: none;
+    width: 15rem;
+
   }
   
   .sidebar {
-    margin-top:4.4rem;
-    height: 100%;
-    width: 230px;
+    z-index: 2;
+    position: fixed;
+    height: 90vh;
     background-color: white;
     overflow-y: scroll;
     background: #d3d3d3;
-    position: fixed;
   }
   
   .sidebar__categories {

@@ -26,8 +26,8 @@ export const Liked = () => {
                      
                     </div>
 
-                    <div className="icons_1">
-                        <div className="border_radios_delete">
+                    <div className="icons_2">
+                        <div className="delete-btn">
                           <div className="border_radios_2" onClick={()=>deleteLikedVideo(_id,likedDispatch)}>
                             <i className="material-icons">delete</i>
                           </div>

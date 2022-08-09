@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./WatchLater.css";
 import { useWatchlater } from '../../Context/WatchLaterContext';
 
 export const WatchLater = () => {
@@ -24,7 +25,7 @@ export const WatchLater = () => {
                  
                 </div>
 
-                <div className="icons_1">
+                <div className="icons_2">
                         <div className="border_radios_delete">
                           <div className="border_radios_2" onClick={()=>deleteWatchLater (_id,watchLaterDispatch)}>
                             <i className="material-icons">delete</i>

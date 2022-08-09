@@ -9,13 +9,13 @@ export const Sidebar = () => {
         <div className="sidebar">
           <div className="sidebar__categories">
             <div className="sidebar__category">
-              <Link to="/Home">
+              <Link to="/">
                 <i className="fa fa-home" aria-hidden="true"></i>
                 <span className="sidebaricons">Home</span>
               </Link>
             </div>
             <div className="sidebar__category">
-              <Link to="/" className="">
+              <Link to="/videoCard" className="">
                 <i className="icon-sidebar fa-solid fa-compass"> </i>
                 <span className="sidebaricons">Explore</span>
               </Link>

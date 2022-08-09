@@ -1,15 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { usePlayList } from "../../Context/PlayListContext";
-// import { Navigate } from 'react-router-dom';
 const authtoken = localStorage.getItem("AuthToken");
 
 export const CreatPlaylist = () => {
   const { playListState } = usePlayList();
-  const { playListDispatch, deletePlayList, addVideoToPlaylist,} = usePlayList();
-
-  console.log(playListState, "9090");
+  const { playListDispatch, deletePlayList, addVideoToPlaylist, } = usePlayList();
 
   useEffect(() => {
     (async () => {
@@ -38,26 +36,24 @@ export const CreatPlaylist = () => {
 
           {playListState.getUserPlayList?.map((video) => {
             const { _id, title } = video;
-
-
             return (
               <>
                 <div className="playlistmain__container" key={_id}>
-                <h3>{title}</h3>
-                  <div className="videos_1">
-                    <div className="icons_container">
-                      <div className="border_radios_deletes">
-                        <div
-                          className="border_radios_playlist"
-                          onClick={() => deletePlayList(_id, playListDispatch)}
-                        >
-                          <i className="material-icons">delete</i>
+                  <Link to={`/playlistVideoCard/${_id}`}>
+                    <h3>{title}</h3>
+                    <div className="videos_1">
+                      <div className="icons_container">
+                        <div className="border_radios_deletes">
+                          <div
+                            className="border_radios_playlist"
+                            onClick={() => deletePlayList(_id, playListDispatch)}
+                          >
+                            <i className="material-icons">delete</i>
+                          </div>
                         </div>
                       </div>
                     </div>
-
-
-                  </div>
+                  </Link>
                 </div>
               </>
             );

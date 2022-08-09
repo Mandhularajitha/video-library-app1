@@ -9,7 +9,7 @@ export const NavContainer = () => {
     <div className="Navbar">
       <Navbar />
       <div className="Sidebar">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div className="Outlets">
           <Outlet />
         </div>

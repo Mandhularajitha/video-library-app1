@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <>
-      <section>
+      <section className="section">
         <div className="banner">
           <div className="navbar"></div>
 
@@ -13,7 +13,7 @@ export const Home = () => {
             <h1 className="title_container">Watch Programming vedios</h1>
     
             <div>
-              <Link to="/">
+              <Link to="/login">
                 <button className="home_btn" type="button">
                   <span className="watch_btn"></span>Watch More
                 </button>

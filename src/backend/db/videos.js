@@ -83,7 +83,6 @@ export const videos = [
   view:"245 views 10 month ago"
 },
 
-
 ];
 
 

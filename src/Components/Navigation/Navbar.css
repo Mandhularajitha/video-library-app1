@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
+/* 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -82,4 +82,11 @@ body {
   height: 100%;
   border: none;
   border-radius: 0;
+}
+
+.log_btn{
+  margin-top: 0.2rem;
+  width: 5rem;
+  padding: 10px;
+  font-size: 20px;
 }

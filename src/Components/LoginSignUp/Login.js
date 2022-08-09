@@ -1,15 +1,26 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/Authentication/LoginContext";
-
+import { toast } from "react-toastify";
 import "./Login.css"
 
 const Login = () => {
+  const {isAuth} = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [data, setData] = useState({
     email: "",
     password: "",
   });
   const { loginHandler } = useAuth();
+
+
+  useEffect(() => {
+    if (isAuth && location.state !== null) {
+        navigate(location.state.pathname)
+    }
+}, [isAuth]);
 
   return (
     <>
@@ -51,6 +62,16 @@ const Login = () => {
                 Login
               </button>
             </form>
+            <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  loginHandler( "rajitha@gmail.com","rajitha@0987");
+                  toast.success("Login Successfully");
+                }}
+                className="submit_bt"
+              >
+                login as guest
+              </button>
             <div><br />  
             <button className="passwordbutn">
               <a href="a">Forget password ?</a>or
